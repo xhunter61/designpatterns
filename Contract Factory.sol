@@ -1,4 +1,4 @@
-contract Bakery {
+contract Factory {
 
   address[] public contracts;
 
@@ -7,18 +7,18 @@ contract Bakery {
     return contracts.length;
   }
 
-  function newCookie()public returns(address newContract)
+  function newProduct()public returns(address newContract)
   {
-    Cookie c = new Cookie();
-    contracts.push(c);
-    return c;
+    Product p = new Product();
+    contracts.push(p);
+    return p;
   }
 }
 
-contract Cookie {
+contract Product {
 
-  function getFlavor() public constant returns (string flavor)
+  function getName() public constant returns (string name)
   {
-    return "Nut";
+    return "Contract";
   }    
 }
